@@ -1,0 +1,186 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/searchBar"
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#d500f9"
+        android:padding="0dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:elevation="3dp">
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/imageButton"
+            android:src="@drawable/search"
+            android:layout_marginRight="17dp"
+            android:layout_marginEnd="17dp"
+            android:onClick="onClickSearch"
+            android:scaleType="centerCrop"
+            android:clickable="true"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ffffff"
+            android:id="@+id/imageView"
+            android:layout_toLeftOf="@+id/imageButton"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_toEndOf="@+id/textView" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:textColor="#ffffff"
+            android:background="#CC00FF"
+            android:textSize="18sp"
+            android:layout_alignBaseline="@+id/textView"
+            android:layout_alignLeft="@+id/imageView"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_toLeftOf="@+id/imageButton"
+            android:layout_toStartOf="@+id/imageButton" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText2"
+            android:textColor="#ffffff"
+            android:background="#CC00FF"
+            android:textSize="18sp"
+            android:layout_alignBaseline="@+id/textView2"
+            android:layout_toLeftOf="@+id/imageButton"
+            android:layout_alignLeft="@+id/imageView"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_marginTop="1dp"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出发地"
+            android:id="@+id/textView"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:textSize="18sp"
+            android:layout_above="@+id/imageView"
+            android:layout_marginBottom="3dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/abc_primary_text_material_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="目的地"
+            android:id="@+id/textView2"
+            android:textSize="18sp"
+            android:textIsSelectable="false"
+            android:layout_below="@+id/imageView"
+            android:layout_alignLeft="@+id/textView"
+            android:layout_alignStart="@+id/textView"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/abc_primary_text_material_dark" />
+    </RelativeLayout>
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/myOSMmapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchBar"
+        tilesource="MapquestOSM"
+        android:clickable="true"
+        android:enabled="true"
+        android:nestedScrollingEnabled="false">
+    </org.osmdroid.views.MapView>
+
+    <RelativeLayout
+        android:id="@+id/infoBar"
+        android:layout_width="fill_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:elevation="3dp"
+        android:visibility="visible">
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="3dp"
+            android:id="@+id/shadow2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/bottombar" />
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/background"
+            android:layout_below="@+id/shadow2"
+            android:background="#ffffff"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="欢迎使用TsinghuaMap"
+            android:id="@+id/infoText"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="34dp"
+            android:layout_marginStart="34dp"
+            android:textSize="22sp"
+            android:textColor="#000000" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:id="@+id/shadow"
+        android:background="@drawable/topbar"
+        android:layout_below="@+id/searchBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:id="@+id/imageButton3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="146dp"
+        android:background="@drawable/gps"
+        android:onClick="onClickLocate"/>
+
+    <ImageButton
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:id="@+id/imageButton4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="66dp"
+        android:layout_alignRight="@+id/imageButton3"
+        android:layout_alignEnd="@+id/imageButton3"
+        android:background="@drawable/refresh"
+        android:onClick="onClickRefresh"/>
+
+</RelativeLayout>
